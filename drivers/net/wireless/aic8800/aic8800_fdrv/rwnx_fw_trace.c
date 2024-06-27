@@ -15,6 +15,7 @@
 #include <linux/fs.h>
 #include <linux/delay.h>
 #include "rwnx_fw_trace.h"
+#include "aicwf_debug.h"
 
 int rwnx_fw_log_init(struct rwnx_fw_log *fw_log)
 {
@@ -29,7 +30,7 @@ int rwnx_fw_log_init(struct rwnx_fw_log *fw_log)
 	fw_log->buf.dataend = fw_log->buf.data + FW_LOG_SIZE;
 	spin_lock_init(&fw_log->lock);
 
-	printk("fw_log_init: %lx, %lx\n", (unsigned long)fw_log->buf.start, (unsigned long)(fw_log->buf.dataend));
+	AICWFDBG(LOGINFO, "fw_log_init: %lx, %lx\n", (unsigned long)fw_log->buf.start, (unsigned long)(fw_log->buf.dataend));
 	return 0;
 }
 

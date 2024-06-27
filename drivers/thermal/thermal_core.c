@@ -607,7 +607,6 @@ int thermal_zone_bind_cooling_device(struct thermal_zone_device *tz,
 
 	if (trip >= tz->num_trips || trip < 0)
 		return -EINVAL;
-
 	list_for_each_entry(pos1, &thermal_tz_list, node) {
 		if (pos1 == tz)
 			break;
@@ -623,7 +622,6 @@ int thermal_zone_bind_cooling_device(struct thermal_zone_device *tz,
 	/* lower default 0, upper default max_state */
 	lower = lower == THERMAL_NO_LIMIT ? 0 : lower;
 	upper = upper == THERMAL_NO_LIMIT ? cdev->max_state : upper;
-
 	if (lower > upper || upper > cdev->max_state)
 		return -EINVAL;
 

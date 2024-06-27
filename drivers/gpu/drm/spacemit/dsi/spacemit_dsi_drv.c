@@ -869,10 +869,10 @@ int spacemit_dsi_isr(struct spacemit_dsi_device* device_ctx)
 	// 	pr_err("DSI: DSI_IRQ_PHY_FIFO_UNDERRUN %d\n", a);
 
 	if (irq_st & DSI_IRQ_VPN_BF_UNDERRUN_ERR)
-		pr_err("DSI: DSI_IRQ_VPN_BF_UNDERRUN_ERR\n");
+		pr_err(","); //DSI: DSI_IRQ_VPN_BF_UNDERRUN_ERR\n");
 
 	if (irq_st & DSI_IRQ_VPN_BF_OVERRUN_ERR)
-		pr_err("DSI: DSI_IRQ_VPN_BF_OVERRUN_ERR\n");
+		pr_err("."); //DSI: DSI_IRQ_VPN_BF_OVERRUN_ERR\n");
 
 	return 0;
 }

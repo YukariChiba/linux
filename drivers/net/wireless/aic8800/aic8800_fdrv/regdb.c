@@ -26,6 +26,31 @@ static const struct ieee80211_regdomain regdom_00 = {
 	// 36...165
 		REG_RULE(5150 - 10, 5970 + 10, 80, 0, 20, 0),
 	}
+
+#if 0
+	.alpha2 = "00",
+	.reg_rules = {
+		REG_RULE_EXT(2402, 2472, 40, 0, 20, 0, 0),
+		//REG_RULE_EXT(2457, 2482, 40, 0, 20, 0, 
+		//	NL80211_RRF_NO_IR | 0),
+		REG_RULE_EXT(2474, 2494, 20, 0, 20, 0, 
+			NL80211_RRF_NO_IR | 
+			NL80211_RRF_NO_OFDM | 0),
+		REG_RULE_EXT(5170, 5250, 80, 0, 20, 0, 
+			NL80211_RRF_NO_IR | 
+			NL80211_RRF_AUTO_BW | 0),
+		REG_RULE_EXT(5250, 5330, 80, 0, 20, 0, 
+			NL80211_RRF_NO_IR | 
+			NL80211_RRF_DFS | 
+			NL80211_RRF_AUTO_BW | 0),
+		REG_RULE_EXT(5490, 5730, 160, 0, 20, 0, 
+			NL80211_RRF_NO_IR | 
+			NL80211_RRF_DFS | 0),
+		REG_RULE_EXT(5735, 5835, 80, 0, 20, 0, 
+			NL80211_RRF_NO_IR | 0),
+	},
+	.n_reg_rules = 6
+#endif
 };
 
 static const struct ieee80211_regdomain regdom_AD = {
